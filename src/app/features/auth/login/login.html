@@ -1,0 +1,21 @@
+<section class="mx-auto max-w-xl rounded-3xl border border-slate-800 bg-slate-900/60 p-8">
+  <p class="text-sm uppercase tracking-[0.25em] text-sky-400">Authentication</p>
+  <h1 class="mt-4 text-3xl font-semibold text-white">Login</h1>
+
+  <p class="mt-4 text-slate-300">
+    You tried to open a protected route. After login you will return to:
+    <span class="font-medium text-white">{{ returnUrl }}</span>
+  </p>
+
+  <div class="mt-6 flex gap-3">
+    <button
+      (click)="login()"
+      class="rounded-lg bg-sky-500 px-4 py-2 font-medium text-slate-950 hover:bg-sky-400"
+    >
+      Login
+    </button>
+    <a routerLink="/home" class="rounded-lg border border-slate-700 px-4 py-2 text-slate-300 hover:text-white">
+      Cancel
+    </a>
+  </div>
+</section>
