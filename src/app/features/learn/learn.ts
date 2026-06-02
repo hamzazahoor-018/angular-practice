@@ -4,6 +4,5 @@ import { Component } from '@angular/core';
   selector: 'app-learn',
   imports: [],
   templateUrl: './learn.html',
-  styles: ``,
 })
 export class Learn {}
