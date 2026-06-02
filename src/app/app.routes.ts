@@ -35,6 +35,11 @@ export const routes: Routes = [
     title: 'Reactive Form',
   },
   {
+    path: 'data',
+    loadComponent: () => import('./features/data/posts/posts').then((c) => c.PostsComponent),
+    title: 'Data',
+  },
+  {
     path: 'learn',
     children: [
       {
