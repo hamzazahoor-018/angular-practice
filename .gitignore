@@ -42,3 +42,22 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Angular specific
+.angular/
+.angular-cli.json
+.angular.json
+.angular-*
+.angular-cache/
+.angular-*.json
+.angular-*.log
+.angular-*.tsbuildinfo
+.angular-*.tsbuildinfo.txt
+.angular-*.tsbuildinfo.json
+
