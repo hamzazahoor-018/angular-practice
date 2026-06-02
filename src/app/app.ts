@@ -6,4 +6,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   imports: [RouterLink, RouterOutlet],
   templateUrl: './app.html',
 })
-export class App {}
+export class App {
+}

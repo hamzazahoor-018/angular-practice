@@ -1,8 +1,6 @@
 <h2 class="text-2xl">Items</h2>
 <ul>
-    @for(let id of list) {
-        <li>
-            <a (click)="openDetails(id)">{{ 'Item ' + id }}</a>
-        </li>
-    }
+    <li *ngFor="let id of list">
+        <a (click)="openDetails(id)" class="text-sky-400 hover:underline">Item {{ id }}</a>
+    </li>
 </ul>

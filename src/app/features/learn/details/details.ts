@@ -1,19 +1,28 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
-const route = inject(ActivatedRoute);
-
+@Component({
+  selector: 'app-learn-details',
+  standalone: true,
+  imports: [RouterLink],
+  templateUrl: './details.html',
+})
 export class DetailsComponent {
-  id = route.snapshot.params['id'];
+  private readonly route = inject(ActivatedRoute);
+
+  id = this.route.snapshot.params['id'];
+  hasUnsavedChanges = false;
+
+  toggleUnsavedChanges(): void {
+    this.hasUnsavedChanges = !this.hasUnsavedChanges;
+  }
+
+  canDeactivate(): boolean {
+    if (!this.hasUnsavedChanges) {
+      return true;
+    }
+
+    return confirm('You have unsaved changes. Leave this page?');
+  }
 }
-
-
-// import { Component, signal, inject } from '@angular/core';
-// import { ActivatedRoute } from '@angular/router';
-// import { map } from 'rxjs/operators';
-
-// const route = inject(ActivatedRoute);
-
-// export class DetailsComponent {
-//   id$ = route.paramMap.pipe(map(m => m.get('id')));
-// }
