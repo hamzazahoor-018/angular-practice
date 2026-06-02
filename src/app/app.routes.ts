@@ -19,6 +19,22 @@ export const routes: Routes = [
     title: 'Login',
   },
   {
+    path: 'forms',
+    loadComponent: () =>
+      import('./features/forms/template-driven-form/template-driven-form').then(
+        (c) => c.TemplateDrivenFormComponent,
+      ),
+    title: 'Forms',
+  },
+  {
+    path: 'forms/reactive',
+    loadComponent: () =>
+      import('./features/forms/reactive-form/reactive-form').then(
+        (c) => c.ReactiveFormComponent,
+      ),
+    title: 'Reactive Form',
+  },
+  {
     path: 'learn',
     children: [
       {
