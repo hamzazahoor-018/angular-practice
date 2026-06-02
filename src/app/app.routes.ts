@@ -12,10 +12,22 @@ export const routes: Routes = [
     title: 'Home',
   },
   {
-    path: 'learn',
-    loadComponent: () => import('./features/learn/learn').then((c) => c.Learn),
-    title: 'Learn',
-  },
+  path: 'learn',
+  children: [
+    {
+      path: '',
+      loadComponent: () =>
+        import('./features/learn/list/list').then((c) => c.ListComponent),
+      title: 'Learn — List',
+    },
+    {
+      path: ':id',
+      loadComponent: () =>
+        import('./features/learn/details/details').then((c) => c.DetailsComponent),
+      title: 'Learn — Details',
+    },
+  ],
+},
   {
     path: '**',
     redirectTo: 'home',
